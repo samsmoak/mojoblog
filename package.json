@@ -4,12 +4,15 @@
 	"description": "",
 	"main": "app.js",
 	"scripts": {
-		"start": "nodemon index.js"
+		"start": "nodemon index.js",
+		"mojoblog": "cd mojoblog && npm start",
+		"dev": "concurrently \"nodemon index.js\" \"npm run mojoblog\""
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"bcrypt": "^5.0.1",
+		"concurrently": "^8.2.0",
 		"cors": "^2.8.5",
 		"dotenv": "^10.0.0",
 		"express": "^4.17.1",

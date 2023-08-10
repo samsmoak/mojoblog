@@ -7,6 +7,8 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
+const emailRoute = require("./routes/email");
+const contactRoute = require("./routes/contact");
 const multer = require("multer");
 const cors = require("cors");
 const path = require("path");
@@ -56,6 +58,9 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
+app.use("/api/email", emailRoute);
+app.use("/api/contact", contactRoute);
+// app.use("/api/email", emailRoute);
 app.use("/api/categories", categoryRoute);
 
 app.listen(process.env.PORT, () => {
